@@ -1,0 +1,43 @@
+{
+  "name": "fullcalendar-playground",
+  "version": "1.0.0",
+  "description": "[fullcalendar](https://fullcalendar.io/) の動作確認用リポジトリ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "fix": "prettier -w src/",
+    "lint": "eslint src/",
+    "build": "tsc && npm run copy && npm run build:client",
+    "build:client": "esbuild src/public/client.ts --bundle --platform=browser --format=esm --sourcemap --outfile=dist/public/client.js",
+    "copy": "cpy 'views/**/*' 'public/**/*' ../dist --cwd=src --base=cwd",
+    "start": "node dist/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chosakuken/fullcalendar-playground.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/chosakuken/fullcalendar-playground/issues"
+  },
+  "homepage": "https://github.com/chosakuken/fullcalendar-playground#readme",
+  "dependencies": {
+    "ejs": "^6.0.1",
+    "express": "^5.2.1",
+    "fullcalendar": "^7.1.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/express": "^5.0.6",
+    "cpy-cli": "^7.0.0",
+    "esbuild": "^0.28.2",
+    "eslint": "^10.10.0",
+    "globals": "^17.12.0",
+    "prettier": "^3.9.6",
+    "typescript": ">=5.0 <6.1",
+    "typescript-eslint": "^8.70.0"
+  }
+}
