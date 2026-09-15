@@ -1,2 +1,2 @@
 # fullcalendar-playground
-[fullcalendar)[https://fullcalendar.io/) の動作確認用リポジトリ
+[fullcalendar](https://fullcalendar.io/) の動作確認用リポジトリ
