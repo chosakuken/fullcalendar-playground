@@ -9,6 +9,7 @@ const app = express();
 
 app.set("view engine", "ejs");
 app.set("views", path.join(APP_DIR, "views"));
+app.use(express.static(path.join(APP_DIR, "public")));
 
 app.get("/", (req: Request, res: Response) => {
   res.render("index");
